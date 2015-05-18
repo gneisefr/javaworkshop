@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context path="/ws-javaframeworks" docBase="ws-javaframeworks"
+	reloadable="true">
+	<Loader
+		loaderClass="org.springframework.instrument.classloading.tomcat.TomcatInstrumentableClassLoader"/>
+</Context>
+
