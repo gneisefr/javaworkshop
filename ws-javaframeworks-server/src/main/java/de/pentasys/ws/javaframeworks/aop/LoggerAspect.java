@@ -13,9 +13,10 @@ public class LoggerAspect {
 
 	private static Logger logger = Logger.getLogger(LoggerAspect.class);
 
+	//serviceMathos()="execution(* de.pentasys.ws.javaframeworks.aop.AopService.addAppointment(..))"
 	@Pointcut("execution(* de.pentasys.ws.javaframeworks.aop.AopService.*(..))")
 	public void serviceMethods() {
-		//
+		
 	}
 
 	@Before("serviceMethods()")

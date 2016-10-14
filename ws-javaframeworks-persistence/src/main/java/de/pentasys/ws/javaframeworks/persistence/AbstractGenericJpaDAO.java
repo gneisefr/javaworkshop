@@ -5,6 +5,11 @@ import java.io.Serializable;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.context.annotation.AdviceMode;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import de.pentasys.ws.javaframeworks.persistence.admin.dao.UserDAOImpl;
+
 /**
  * Eine Implementierung der Schnittstelle {@link GenericJpaDAO} für JPA.
  * 
@@ -12,7 +17,6 @@ import javax.persistence.PersistenceContext;
  *            Die Klasse der Entität
  * @param <PrimaryKey>
  *            Die Klasse des primären Key
- * @see de.rahn.db.dao.AbstractGenericDAO
  */
 public abstract class AbstractGenericJpaDAO<Entity, PrimaryKey extends Serializable>
 		extends AbstractGenericDAO<Entity, PrimaryKey> implements

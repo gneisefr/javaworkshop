@@ -3,8 +3,10 @@ package de.pentasys.ws.javaframeworks.persistence.admin.dao;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import de.pentasys.ws.javaframeworks.persistence.AbstractGenericJpaDAO;
+import de.pentasys.ws.javaframeworks.persistence.admin.model.Appointment;
 import de.pentasys.ws.javaframeworks.persistence.admin.model.User;
 
 /**
@@ -16,8 +18,8 @@ import de.pentasys.ws.javaframeworks.persistence.admin.model.User;
  *            Die Klasse des primären Key
  */
 @Repository
-public class UserDAO extends AbstractGenericJpaDAO<User, String> implements
-		IUserDAO {
+public class UserDAOImpl extends AbstractGenericJpaDAO<User, String> implements
+		UserDAO {
 
 	/*
 	 * (non-Javadoc)
@@ -35,8 +37,14 @@ public class UserDAO extends AbstractGenericJpaDAO<User, String> implements
 	 * 
 	 * @see de.pentasys.ws.javaframeworks.persistence.dao.IPersonDAO#findAll()
 	 */
+	@Transactional(readOnly=true)
 	public List<User> findAll() {
 		return getEntityManager().createNamedQuery(User.FIND_ALL, User.class)
+				.getResultList();
+	}
+	
+	public List<User> findByName() {
+		return getEntityManager().createNamedQuery(User.FIND_BY_NAME, User.class)
 				.getResultList();
 	}
 

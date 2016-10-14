@@ -9,7 +9,7 @@ import de.pentasys.ws.javaframeworks.persistence.GenericJpaDAO;
 import de.pentasys.ws.javaframeworks.persistence.admin.model.User;
 
 @Repository
-public interface IUserDAO extends GenericJpaDAO<User, String> {
+public interface UserDAO extends GenericJpaDAO<User, String> {
 
 	/**
 	 * {@inheritDoc}

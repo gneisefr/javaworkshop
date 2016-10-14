@@ -7,7 +7,7 @@ import de.pentasys.ws.javaframeworks.persistence.admin.model.User;
 /**
  * Das Interface zum Service Users.
  */
-public interface IUsers {
+public interface UserService {
 
 	/**
 	 * Hole alle Benutzer.

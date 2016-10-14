@@ -5,6 +5,7 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Repository;
 
 /**
  * Eine abstrakte Implementierung der Schnittstelle {@link GenericDAO}.

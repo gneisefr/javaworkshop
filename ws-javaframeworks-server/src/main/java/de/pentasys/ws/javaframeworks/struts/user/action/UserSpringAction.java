@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import com.opensymphony.xwork2.ActionSupport;
 
 import de.pentasys.ws.javaframeworks.persistence.admin.model.User;
-import de.pentasys.ws.javaframeworks.spring.admin.service.IUsers;
+import de.pentasys.ws.javaframeworks.spring.admin.service.UserService;
 
 @Transactional
 @Component(value = "userSpringAction")
@@ -24,7 +24,7 @@ public class UserSpringAction extends ActionSupport {
 
 	// DI via Spring
 	@Autowired
-	IUsers personService;
+	UserService personService;
 
 	List<User> users;
 
@@ -70,11 +70,11 @@ public class UserSpringAction extends ActionSupport {
 
 	}
 
-	public IUsers getPersonService() {
+	public UserService getPersonService() {
 		return personService;
 	}
 
-	public void setPersonService(IUsers personService) {
+	public void setPersonService(UserService personService) {
 		this.personService = personService;
 	}
 

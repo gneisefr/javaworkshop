@@ -20,7 +20,7 @@
 	</description>
 
 	<bean id="personService"
-		class="de.pentasys.ws.javaframeworks.spring.admin.service.Users">
+		class="de.pentasys.ws.javaframeworks.spring.admin.service.UserServiceImpl">
 	</bean>
 
 	<bean id="users"

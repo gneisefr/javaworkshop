@@ -1,5 +1,7 @@
 package de.pentasys.ws.javaframeworks.aop;
 
+import javax.jws.HandlerChain;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.ComponentScan;

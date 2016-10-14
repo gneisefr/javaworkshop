@@ -33,41 +33,41 @@
 					<server>${server}</server>
 					<path>/${context.path}</path>
 					<username>tomcat</username>
-					<password>tomcat</password>					
+					<password>tomcat</password>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>jaxb2-maven-plugin</artifactId>
-                <version>1.6</version>
-                <executions>
-                    <execution>
-                        <id>schemagen</id>
-                        <goals>
-                            <goal>schemagen</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <transformSchemas>
-                        <transformSchema>                       
-                            <uri>http://xmldefs.pentasys.de/ws/javaframeworks/report</uri>                     
-                            <toPrefix>r</toPrefix>
-                            <toFile>report.xsd</toFile>
-                        </transformSchema>
-                        <transformSchema>
-                            <uri>http://xmldefs.pentasys.de/ws/javaframeworks/user</uri>
-                            <toPrefix>u</toPrefix>
-                            <toFile>user.xsd</toFile>
-                        </transformSchema>
-                    </transformSchemas>                           
-                    <includes>
-                        <include>de/pentasys/ws/javaframeworks/jaxb/**/*</include>
-                    </includes>
-                </configuration>
-            </plugin>          
-			
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxb2-maven-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<id>schemagen</id>
+						<goals>
+							<goal>schemagen</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<transformSchemas>
+						<transformSchema>
+							<uri>http://xmldefs.pentasys.de/ws/javaframeworks/report</uri>
+							<toPrefix>r</toPrefix>
+							<toFile>report.xsd</toFile>
+						</transformSchema>
+						<transformSchema>
+							<uri>http://xmldefs.pentasys.de/ws/javaframeworks/user</uri>
+							<toPrefix>u</toPrefix>
+							<toFile>user.xsd</toFile>
+						</transformSchema>
+					</transformSchemas>
+					<includes>
+						<include>de/pentasys/ws/javaframeworks/jaxb/**/*</include>
+					</includes>
+				</configuration>
+			</plugin>
+
 		</plugins>
 
 	</build>
@@ -128,6 +128,13 @@
 			<artifactId>struts-taglib</artifactId>
 			<version>1.3.10</version>
 		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+
 	</dependencies>
 
 </project>

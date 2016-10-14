@@ -2,20 +2,19 @@ package de.pentasys.ws.javaframeworks.spring.admin.service;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import de.pentasys.ws.javaframeworks.persistence.admin.dao.IUserDAO;
+import de.pentasys.ws.javaframeworks.persistence.admin.dao.UserDAO;
 import de.pentasys.ws.javaframeworks.persistence.admin.model.User;
 
 @Service("users")
 @Transactional
-public class Users implements IUsers {
+public class UserServiceImpl implements UserService {
 
 	@Autowired
-	private IUserDAO userDAO;
+	private UserDAO userDAO;
 
 	@Override
 	public List<User> getUsers() {

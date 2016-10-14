@@ -2,6 +2,8 @@ package de.pentasys.ws.javaframeworks.persistence;
 
 import java.io.Serializable;
 
+import org.springframework.stereotype.Repository;
+
 /**
  * Ein generische DAO-Schnittstelle für eine Entität mit einem primären Key.
  * 
@@ -10,6 +12,7 @@ import java.io.Serializable;
  * @param <PrimaryKey>
  *            Die Klasse des primären Key
  */
+@Repository
 public interface GenericDAO<Entity, PrimaryKey extends Serializable> {
 
 	/**

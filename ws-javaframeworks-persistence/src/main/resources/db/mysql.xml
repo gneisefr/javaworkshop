@@ -22,7 +22,6 @@
 		<property name="url" value="jdbc:mysql://localhost:3306/myschema" />
 		<property name="username" value="testuser" />
 		<property name="password" value="testuser" />
-
 	</bean>
 
 
@@ -46,12 +45,6 @@
 			</props>
 		</property>
 	</bean>
-
-	<!-- Erzeuge die Persitence-Unit -->
-	<!-- <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" 
-		p:dataSource-ref="dataSource" p:persistenceUnitName="test-spring-drivers"> 
-		<property name="jpaVendorAdapter"> <bean p:generateDdl="true" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" 
-		/> </property> </bean> -->
 
 	<!-- Einen Transaktionmanager erzeugen -->
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"

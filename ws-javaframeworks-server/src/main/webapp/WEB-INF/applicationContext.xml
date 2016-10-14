@@ -25,7 +25,7 @@
 	<!-- Verwenden des Load-Time-Weaver -->
 	<context:load-time-weaver aspectj-weaving="on" />
 
-	<import resource="classpath:db/db.xml" />
+	<import resource="classpath:db/mysql.xml" />
 
 	<!-- Struts integration -->
 	<import resource="spring-servlet.xml" />

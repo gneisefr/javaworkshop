@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import de.pentasys.ws.javaframeworks.persistence.admin.model.User;
-import de.pentasys.ws.javaframeworks.spring.admin.service.IUsers;
+import de.pentasys.ws.javaframeworks.spring.admin.service.UserService;
 
 @Controller
 @ComponentScan
 public class UserController {
 
 	@Autowired
-	private IUsers userService;
+	private UserService userService;
 
 	@RequestMapping(value = "/users", method = RequestMethod.GET)
 	public String listUsers(Model model) {
