@@ -4,40 +4,25 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import de.pentasys.ws.javaframeworks.persistence.AbstractGenericJpaDAO;
+import de.pentasys.ws.javaframeworks.persistence.GenericDAO;
+import de.pentasys.ws.javaframeworks.persistence.GenericJpaDAO;
 import de.pentasys.ws.javaframeworks.persistence.admin.model.User;
 
-/**
- * Ein DAO für einen Benutzer.
- * 
- * @param <Entity>
- *            Die Klasse der Entität
- * @param <PrimaryKey>
- *            Die Klasse des primären Key
- */
 @Repository
-public class UserDAO extends AbstractGenericJpaDAO<User, String> implements
-		IUserDAO {
+public interface IUserDAO extends GenericJpaDAO<User, String> {
 
-	/*
-	 * (non-Javadoc)
+	/**
+	 * {@inheritDoc}
 	 * 
-	 * @see
-	 * de.pentasys.ws.javaframeworks.persistence.dao.IPersonDAO#getPrimaryKey
-	 * (de.pentasys.ws.javaframeworks.services.entities.Person)
+	 * @see GenericDAO#getPrimaryKey(java.lang.Object)
 	 */
-	public String getPrimaryKey(User persistentObject) {
-		return persistentObject.getId();
-	}
+	public abstract String getPrimaryKey(User persistentObject);
 
-	/*
-	 * (non-Javadoc)
+	/**
+	 * Suche alle Benutzer.
 	 * 
-	 * @see de.pentasys.ws.javaframeworks.persistence.dao.IPersonDAO#findAll()
+	 * @return alle Benutzer
 	 */
-	public List<User> findAll() {
-		return getEntityManager().createNamedQuery(User.FIND_ALL, User.class)
-				.getResultList();
-	}
+	public abstract List<User> findAll();
 
 }
