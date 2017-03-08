@@ -1,0 +1,97 @@
+<project basedir="." name="WS Java Web Foundation">
+	<property name="module.name" value="java-web-foundation" />
+
+	<property file="build.properties" />
+	<import file="./common.xml" />
+
+	<target name="set.version">
+		<replaceregexp byline="true">
+			<fileset dir="${web.webapp.dir}/views">
+				<filename name="**/*.jsp" />
+			</fileset>
+			<regexp pattern="%APP.VERSION%" />
+			<substitution expression="${param.version}" />
+		</replaceregexp>
+	</target>
+
+	<target name="reset.version">
+		<replaceregexp byline="true">
+			<fileset dir="${web.webapp.dir}/views">
+				<filename name="**/*.jsp" />
+			</fileset>
+			<regexp pattern="${param.version}" />
+			<substitution expression="%APP.VERSION%" />
+		</replaceregexp>
+	</target>
+
+	<target name="dev.install">
+		<antcall target="set.version">
+			<param name="param.version" value="${app.version}" />
+		</antcall>
+		<exec executable="cmd" os="${envOS}" dir="${prj.dir}">
+			<arg line="/c CALL mvn clean install" />
+			<arg value="${mvn.skip.test}" />
+			<arg value="-P ${profile}" />
+		</exec>
+		<antcall target="reset.version">
+			<param name="param.version" value="${app.version}" />
+		</antcall>
+	</target>
+
+	<target name="dev.eclipse">
+		<exec executable="cmd" os="${envOS}" dir="${prj.dir}">
+			<arg line="/c CALL mvn eclipse:eclipse" />
+		</exec>
+	</target>
+
+	<target name="dev.package">
+		<antcall target="set.version">
+			<param name="param.version" value="${app.version}" />
+		</antcall>
+		<exec executable="cmd" os="${envOS}" dir="${prj.dir}">
+			<arg line="/c CALL mvn package -e" />
+			<arg value="${mvn.skip.test}" />
+		</exec>
+		<antcall target="reset.version">
+			<param name="param.version" value="${app.version}" />
+		</antcall>
+	</target>
+
+	<target name="dev.test">
+		<exec executable="cmd" os="${envOS}" dir="${prj.dir}">
+			<arg line="/c CALL mvn test -e" />
+		</exec>
+	</target>
+
+	<target name="dev.deploy" depends="dev.install">
+		<antcall target="set.version">
+			<param name="param.version" value="${app.version}" />
+		</antcall>
+		<exec executable="cmd" os="${envOS}" dir="${web.prj.dir}">
+			<arg line="/c CALL mvn tomcat7:deploy -e" />
+		</exec>
+		<antcall target="reset.version">
+			<param name="param.version" value="${app.version}" />
+		</antcall>
+	</target>
+
+	<target name="dev.redeploy">
+		<antcall target="set.version">
+			<param name="param.version" value="${app.version}" />
+		</antcall>
+		<exec executable="cmd" os="${envOS}" dir="${web.prj.dir}">
+			<arg line="/c CALL mvn tomcat7:redeploy -e" />
+		</exec>
+		<antcall target="reset.version">
+			<param name="param.version" value="${app.version}" />
+		</antcall>
+	</target>
+
+	<target name="dev.undeploy">
+		<exec executable="cmd" os="${envOS}" dir="${web.prj.dir}">
+			<arg line="/c CALL mvn tomcat7:undeploy -e" />
+		</exec>
+	</target>
+
+</project>
+
