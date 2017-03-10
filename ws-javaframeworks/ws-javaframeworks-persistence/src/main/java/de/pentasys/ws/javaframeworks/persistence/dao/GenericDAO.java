@@ -31,7 +31,7 @@ public interface GenericDAO<Entity, PrimaryKey extends Serializable> {
 	 *            das neue persistente Objekt
 	 * @return den primären Key
 	 */
-	PrimaryKey create(Entity newPersistentObject);
+	Entity create(Entity newPersistentObject);
 
 	/**
 	 * Aktualisiere das geänderte Objekt in der Datenbank.
@@ -39,7 +39,7 @@ public interface GenericDAO<Entity, PrimaryKey extends Serializable> {
 	 * @param persistentObject
 	 *            das persistente Objekt
 	 */
-	void save(Entity persistentObject);
+	Entity save(Entity persistentObject);
 
 	/**
 	 * Lösche das persistente Objekt aus der Datenbank.

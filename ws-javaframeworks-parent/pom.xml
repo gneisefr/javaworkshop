@@ -84,6 +84,11 @@
 				<artifactId>spring-tomcat-weaver</artifactId>
 				<version>2.5.6.SEC03</version>
 			</dependency>
+			<dependency>
+				<groupId>org.resthub</groupId>
+				<artifactId>springmvc-router</artifactId>
+				<version>1.2.1</version>
+			</dependency>
 
 			<!-- aop -->
 			<dependency>

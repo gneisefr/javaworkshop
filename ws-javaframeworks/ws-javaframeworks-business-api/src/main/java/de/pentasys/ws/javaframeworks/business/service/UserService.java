@@ -34,7 +34,7 @@ public interface UserService {
 	 *            der Vorname der Benutzer
 	 * @return die Id der Benutzer
 	 */
-	String createUser(String name, String firstname, String password);
+	User createUser(String name, String firstname, String password);
 
 	/**
 	 * Lege eine Person an.
@@ -43,7 +43,7 @@ public interface UserService {
 	 *            der Benutzer
 	 * @return die Id des Benutzers
 	 */
-	String create(User person);
+	User create(User person);
 
 	/**
 	 * Löscht den Benutzer

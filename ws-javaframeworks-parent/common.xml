@@ -5,7 +5,7 @@
 	<property name="profile" value="local" />
 	
 	<property name="prj.dir" value="..\ws-javaframeworks" />
-	<property name="web.prj.dir" value="${prj.dir}\ws-javaframeworks-web" />
+	<property name="web.prj.dir" value="${prj.dir}\ws-javaframeworks-web\web-impl" />
 	<property name="pom.prj.dir" value="..\ws-javaframeworks-parent" />
 	<property name="persistence.prj.dir" value="${prj.dir}\ws-javaframeworks-persistence" />
 	

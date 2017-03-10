@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public String createUser(String name, String firstname, String password) {
+	public User createUser(String name, String firstname, String password) {
 		User p = new User();
 		p.setName(name);
 		p.setFirstname(firstname);
@@ -45,15 +45,15 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public String create(User person) {
-		return userDAO.create(UserEntityBOMapper.getInstance().createEntityFromBo(person));
+	public User create(User person) {
+		return UserEntityBOMapper.getInstance()
+				.createBoFromEntity(userDAO.create(UserEntityBOMapper.getInstance().createEntityFromBo(person)));
 	}
 
 	@Override
 	public User save(User person) {
 		UserEntity entity = UserEntityBOMapper.getInstance().createEntityFromBo(person);
-		userDAO.save(entity);
-		return UserEntityBOMapper.getInstance().createBoFromEntity(entity);
+		return UserEntityBOMapper.getInstance().createBoFromEntity(userDAO.save(entity));
 	}
 
 	@Override

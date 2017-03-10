@@ -14,8 +14,7 @@ import javax.persistence.PersistenceContext;
  *            Die Klasse des primären Key
  */
 public abstract class AbstractGenericJpaDAO<Entity, PrimaryKey extends Serializable>
-		extends AbstractGenericDAO<Entity, PrimaryKey> implements
-		GenericJpaDAO<Entity, PrimaryKey> {
+		extends AbstractGenericDAO<Entity, PrimaryKey>implements GenericJpaDAO<Entity, PrimaryKey> {
 
 	@PersistenceContext
 	private EntityManager entityManager;
@@ -32,9 +31,9 @@ public abstract class AbstractGenericJpaDAO<Entity, PrimaryKey extends Serializa
 	 * 
 	 * @see GenericDAO#create(java.lang.Object)
 	 */
-	public PrimaryKey create(Entity newPersistentObject) {
+	public Entity create(Entity newPersistentObject) {
 		entityManager.persist(newPersistentObject);
-		return getPrimaryKey(newPersistentObject);
+		return newPersistentObject;
 	}
 
 	/**
@@ -42,8 +41,8 @@ public abstract class AbstractGenericJpaDAO<Entity, PrimaryKey extends Serializa
 	 * 
 	 * @see GenericDAO#save(java.lang.Object)
 	 */
-	public void save(Entity persistentObject) {
-		entityManager.merge(persistentObject);
+	public Entity save(Entity persistentObject) {
+		return entityManager.merge(persistentObject);
 	}
 
 	/**

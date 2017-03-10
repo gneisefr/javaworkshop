@@ -1,199 +1,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<parent>
 		<groupId>de.pentasys.ws.javaframeworks</groupId>
 		<artifactId>ws-javaframeworks</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>ws-javaframeworks-web</artifactId>
+	<packaging>pom</packaging>
+	<name>Java Web Foundation:: Web</name>
 
-	<packaging>war</packaging>
 
-	<dependencies>
+ 	<modules>
+		<module>web-api</module>
+		<module>web-impl</module>
+	</modules>
 
-		<!-- app dependencies -->
-		<dependency>
-			<groupId>de.pentasys.ws.javaframeworks</groupId>
-			<artifactId>ws-javaframeworks-domain</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>de.pentasys.ws.javaframeworks</groupId>
-			<artifactId>ws-javaframeworks-business-api</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>de.pentasys.ws.javaframeworks</groupId>
-			<artifactId>ws-javaframeworks-business-impl</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-
-		<!-- spring -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-tomcat-weaver</artifactId>
-		</dependency>
-
-		<!-- ui -->
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>taglibs</groupId>
-			<artifactId>standard</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts2-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts2-spring-plugin</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts-taglib</artifactId>
-		</dependency>
-
-		<!-- test -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-		</dependency>
-
-		<!-- logger -->
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-		</dependency>
-
-		<!-- aop -->
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-		</dependency>
-
-		<!-- utils -->
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-jci-fam</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>jstl</groupId>
-			<artifactId>jstl</artifactId>
-		</dependency>
-
-	</dependencies>
-
-	<build>
-
-		<finalName>${context.path}-${project.version}</finalName>
-
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>true</filtering>
-				<includes>
-					<include>**/*.properties</include>
-				</includes>
-			</resource>
-			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>false</filtering>
-				<includes>
-					<include>**/*</include>
-				</includes>
-				<excludes>
-					<exclude>**/*.properties</exclude>
-				</excludes>
-			</resource>
-		</resources>
-
-		<plugins>
-
-			<plugin>
-				<groupId>org.apache.tomcat.maven</groupId>
-				<artifactId>tomcat7-maven-plugin</artifactId>
-				<version>2.2</version>
-				<configuration>
-					<url>http://${hostname}:${port}/manager/text</url>
-					<server>${server}</server>
-					<path>/${context.path}</path>
-					<username>tomcat</username>
-					<password>tomcat</password>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>jaxb2-maven-plugin</artifactId>
-				<version>1.6</version>
-				<executions>
-					<execution>
-						<id>schemagen</id>
-						<goals>
-							<goal>schemagen</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<transformSchemas>
-						<transformSchema>
-							<uri>http://xmldefs.pentasys.de/ws/javaframeworks/report</uri>
-							<toPrefix>r</toPrefix>
-							<toFile>report.xsd</toFile>
-						</transformSchema>
-						<transformSchema>
-							<uri>http://xmldefs.pentasys.de/ws/javaframeworks/user</uri>
-							<toPrefix>u</toPrefix>
-							<toFile>user.xsd</toFile>
-						</transformSchema>
-					</transformSchemas>
-					<includes>
-						<include>de/pentasys/ws/javaframeworks/jaxb/**/*</include>
-					</includes>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<configuration>
-					<webResources>
-						<resource>
-							<filtering>true</filtering>
-							<directory>src/main/webapp</directory>
-							<includes>
-								<include>**/web.xml</include>
-							</includes>
-						</resource>
-					</webResources>
-					<warSourceDirectory>src/main/webapp</warSourceDirectory>
-					<webXml>src/main/webapp/WEB-INF/web.xml</webXml>
-				</configuration>
-			</plugin>
-
-		</plugins>
-
-	</build>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>antlr</groupId>
-				<artifactId>antlr</artifactId>
-				<version>2.7.7</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 </project>
