@@ -18,14 +18,14 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import de.pentasys.ws.javaframeworks.persistence.BaseEntity;
-
 @Entity
 @Table(schema = "myschema")
 @Access(AccessType.FIELD)
 @NamedQueries(@NamedQuery(name = AppointmentEntity.FIND_ALL, query = "Select p from AppointmentEntity p"))
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public class AppointmentEntity extends BaseEntity{
+@lombok.Getter
+@lombok.Setter
+public class AppointmentEntity extends BaseEntity {
 
 	/**
 	 * 
@@ -51,47 +51,7 @@ public class AppointmentEntity extends BaseEntity{
 	@Column(nullable = false)
 	private String purpose;
 
-	@OneToMany(fetch = FetchType.LAZY, orphanRemoval=true)
+	@OneToMany(fetch = FetchType.LAZY, orphanRemoval = true)
 	private List<UserEntity> mandatoryUsers;
-
-	public Date getStartTime() {
-		return startTime;
-	}
-
-	public void setStartTime(Date startTime) {
-		this.startTime = startTime;
-	}
-
-	public Date getEndTime() {
-		return endTime;
-	}
-
-	public void setEndTime(Date endTime) {
-		this.endTime = endTime;
-	}
-
-	public String getLocation() {
-		return location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
-	}
-
-	public String getPurpose() {
-		return purpose;
-	}
-
-	public void setPurpose(String purpose) {
-		this.purpose = purpose;
-	}
-
-	public List<UserEntity> getMandatoryUsers() {
-		return mandatoryUsers;
-	}
-
-	public void setMandatoryUsers(List<UserEntity> mandatoryUsers) {
-		this.mandatoryUsers = mandatoryUsers;
-	}
 
 }

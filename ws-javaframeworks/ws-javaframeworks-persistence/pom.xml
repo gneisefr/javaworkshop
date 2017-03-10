@@ -85,6 +85,12 @@
 			<artifactId>jasypt-hibernate4</artifactId>
 		</dependency>
 
+		<!-- util -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+
 	</dependencies>
 
 </project>

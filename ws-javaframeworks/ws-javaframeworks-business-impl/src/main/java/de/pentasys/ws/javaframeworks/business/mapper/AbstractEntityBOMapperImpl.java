@@ -26,7 +26,7 @@ import org.springframework.transaction.support.TransactionSynchronizationManager
 import de.pentasys.ws.javaframeworks.common.ErrorCode;
 import de.pentasys.ws.javaframeworks.common.exception.ServiceException;
 import de.pentasys.ws.javaframeworks.domain.BusinessObject;
-import de.pentasys.ws.javaframeworks.persistence.BaseEntity;
+import de.pentasys.ws.javaframeworks.persistence.model.BaseEntity;
 
 public abstract class AbstractEntityBOMapperImpl<B extends BusinessObject, E extends BaseEntity>
 		implements EntityBOMapper<B, E> {

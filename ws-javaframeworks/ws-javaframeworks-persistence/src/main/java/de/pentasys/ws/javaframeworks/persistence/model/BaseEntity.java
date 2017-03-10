@@ -1,4 +1,4 @@
-package de.pentasys.ws.javaframeworks.persistence;
+package de.pentasys.ws.javaframeworks.persistence.model;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -24,6 +24,9 @@ import org.jasypt.hibernate4.type.EncryptedStringType;
 @TypeDef(name = "encryptedString", typeClass = EncryptedStringType.class, parameters = {
 		@Parameter(name = "encryptorRegisteredName", value = "strongHibernateStringEncryptor") })
 @MappedSuperclass
+@lombok.Getter
+@lombok.Setter
+@lombok.EqualsAndHashCode(of = { "id" })
 public class BaseEntity implements Serializable {
 
 	/**
@@ -59,7 +62,6 @@ public class BaseEntity implements Serializable {
 	@Column(name = "CREATED", updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date created;
-	// public abstract void setIdInternal(PK id);
 
 	/** The modified. */
 	@Column(name = "LAST_UPD")
@@ -86,21 +88,6 @@ public class BaseEntity implements Serializable {
 	}
 
 	/**
-	 * @return the id
-	 */
-	public String getId() {
-		return id;
-	}
-
-	/**
-	 * @param id
-	 *            die ID
-	 */
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	/**
 	 * Pre persist.
 	 */
 	@PrePersist
@@ -117,48 +104,6 @@ public class BaseEntity implements Serializable {
 	@PreUpdate
 	protected void preUpdate() {
 		this.modified = new Date();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		BaseEntity other = (BaseEntity) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public String toString() {
-		StringBuilder str = new StringBuilder(getClass().getSimpleName());
-		str.append("[id=").append(id);
-		str.append("]");
-		return str.toString();
 	}
 
 }

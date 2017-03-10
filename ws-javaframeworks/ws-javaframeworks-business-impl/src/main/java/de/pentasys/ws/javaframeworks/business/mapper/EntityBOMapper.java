@@ -4,7 +4,7 @@ package de.pentasys.ws.javaframeworks.business.mapper;
 import java.util.List;
 
 import de.pentasys.ws.javaframeworks.domain.BusinessObject;
-import de.pentasys.ws.javaframeworks.persistence.BaseEntity;
+import de.pentasys.ws.javaframeworks.persistence.model.BaseEntity;
 
 /**
  * The Interface EntityBOMapper.

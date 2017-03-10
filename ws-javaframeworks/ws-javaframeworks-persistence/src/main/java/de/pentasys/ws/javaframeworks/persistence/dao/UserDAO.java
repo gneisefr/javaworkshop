@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import de.pentasys.ws.javaframeworks.persistence.GenericDAO;
-import de.pentasys.ws.javaframeworks.persistence.GenericJpaDAO;
 import de.pentasys.ws.javaframeworks.persistence.model.UserEntity;
 
 @Repository

@@ -1,4 +1,4 @@
-package de.pentasys.ws.javaframeworks.persistence;
+package de.pentasys.ws.javaframeworks.persistence.dao;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;

@@ -22,6 +22,11 @@ create/"></c:url>
 					<td><form:hidden path="id" /></td>
 				</tr>
 			</c:if>
+			<c:if test="${!empty user.version}">
+				<tr>
+					<td><form:hidden path="version" /></td>
+				</tr>
+			</c:if>
 			<tr>
 				<td><form:label path="name">
 						<spring:message text="Name" />

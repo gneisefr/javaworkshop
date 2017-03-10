@@ -1,14 +1,9 @@
-package de.pentasys.ws.javaframeworks.persistence;
+package de.pentasys.ws.javaframeworks.persistence.dao;
 
 import java.io.Serializable;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
-import org.springframework.context.annotation.AdviceMode;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
-
-import de.pentasys.ws.javaframeworks.persistence.dao.UserDAOImpl;
 
 /**
  * Eine Implementierung der Schnittstelle {@link GenericJpaDAO} für JPA.

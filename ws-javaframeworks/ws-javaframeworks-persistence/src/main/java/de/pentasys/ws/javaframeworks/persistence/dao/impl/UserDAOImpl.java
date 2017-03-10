@@ -1,12 +1,12 @@
-package de.pentasys.ws.javaframeworks.persistence.dao;
+package de.pentasys.ws.javaframeworks.persistence.dao.impl;
 
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.pentasys.ws.javaframeworks.persistence.AbstractGenericJpaDAO;
-import de.pentasys.ws.javaframeworks.persistence.model.AppointmentEntity;
+import de.pentasys.ws.javaframeworks.persistence.dao.AbstractGenericJpaDAO;
+import de.pentasys.ws.javaframeworks.persistence.dao.UserDAO;
 import de.pentasys.ws.javaframeworks.persistence.model.UserEntity;
 
 /**
