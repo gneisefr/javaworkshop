@@ -12,9 +12,6 @@
 	<name>Java Web Foundation:: Web</name>
 
 
- 	<modules>
-		<module>web-api</module>
-		<module>web-impl</module>
-	</modules>
+
 
 </project>

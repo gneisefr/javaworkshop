@@ -8,8 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:useBean id="StartBeanJSP"
-		class="de.pentasys.ws.javaframeworks.web.servlets.StartBeanJSP">
+	<jsp:useBean id="StartBeanJSP" class="de.pentasys.ws.javaframeworks.web.servlets.StartBeanJSP">
 	</jsp:useBean>
 	<h3>Hallo, meine JSP-Seite mit JavaBean meldet sich.</h3>
 	<jsp:getProperty property="dateString" name="StartBeanJSP" />

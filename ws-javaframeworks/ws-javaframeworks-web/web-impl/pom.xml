@@ -195,4 +195,5 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	<name>Java Web Foundation:: Web-IMPL</name>
 </project>

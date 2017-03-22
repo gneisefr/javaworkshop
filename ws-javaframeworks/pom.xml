@@ -39,8 +39,7 @@
 		<module>ws-javaframeworks-persistence</module>
 		<module>ws-javaframeworks-domain</module>
 		<module>ws-javaframeworks-common</module>
-		<module>ws-javaframeworks-business-api</module>
-		<module>ws-javaframeworks-business-impl</module>
+		<module>ws-javaframeworks-business</module>
 		<module>ws-javaframeworks-web</module>
 	</modules>
 
@@ -58,4 +57,5 @@
 		</plugins>
 	</build>
 
+	<name>Java Web Foundation</name>
 </project>

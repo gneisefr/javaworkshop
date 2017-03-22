@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>de.pentasys.ws.javaframeworks</groupId>
-		<artifactId>ws-javaframeworks</artifactId>
+		<artifactId>ws-javaframeworks-business</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>ws-javaframeworks-business-api</artifactId>
@@ -53,4 +53,5 @@
 
 	</build>
 
+	<name>Java Web Foundation:: Business-API</name>
 </project>
