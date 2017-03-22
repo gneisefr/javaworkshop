@@ -898,3 +898,5 @@ ws-javaframeworks-parent/.settings/
 ws-javaframeworks-parent/.project
 .recommenders/
 .metadata/
+ws-javaframeworks/ws-javaframeworks-business/business-api/.settings/org.eclipse.wst.validation.prefs
+ws-javaframeworks/ws-javaframeworks-business/business-impl/.settings/org.eclipse.wst.validation.prefs
