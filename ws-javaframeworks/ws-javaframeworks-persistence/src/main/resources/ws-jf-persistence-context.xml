@@ -33,7 +33,7 @@
 			<property name="dataSource" ref="dataSource" />
 			<property name="persistenceUnitName" value="ws-jf-pu" />
 			<property name="packagesToScan"
-				value="de.pentasys.ws.javaframeworks.persistence.admin.model" />
+				value="de.pentasys.ws.javaframeworks.persistence.model" />
 			<property name="jpaVendorAdapter">
 				<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
 					<property name="generateDdl" value="true" />
