@@ -68,7 +68,7 @@
 			<param name="param.version" value="${app.version}" />
 		</antcall>
 		<exec executable="cmd" os="${envOS}" dir="${web.prj.dir}">
-			<arg line="/c CALL mvn tomcat7:deploy -e" />
+			<arg line="/c CALL mvn tomcat7:deploy-only" />
 		</exec>
 		<antcall target="reset.version">
 			<param name="param.version" value="${app.version}" />
@@ -80,7 +80,7 @@
 			<param name="param.version" value="${app.version}" />
 		</antcall>
 		<exec executable="cmd" os="${envOS}" dir="${web.prj.dir}">
-			<arg line="/c CALL mvn tomcat7:redeploy -e" />
+			<arg line="/c CALL mvn tomcat7:redeploy-only -e" />
 		</exec>
 		<antcall target="reset.version">
 			<param name="param.version" value="${app.version}" />

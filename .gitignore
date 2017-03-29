@@ -901,3 +901,4 @@ ws-javaframeworks-parent/.project
 ws-javaframeworks/ws-javaframeworks-business/business-api/.settings/org.eclipse.wst.validation.prefs
 ws-javaframeworks/ws-javaframeworks-business/business-impl/.settings/org.eclipse.wst.validation.prefs
 ws-javaframeworks/ws-javaframeworks-web/web-impl/.settings/
+*.hsp

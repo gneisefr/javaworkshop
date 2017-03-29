@@ -41,19 +41,23 @@
 		p:suffix=".jsp" p:prefix="/views/spring/"
 		p:viewClass="org.springframework.web.servlet.view.JstlView" />
 
-<!-- 	<bean id="handlerMapping" class="org.resthub.web.springmvc.router.RouterHandlerMapping">
-		<property name="routeFiles">
-			<list>
-				<value>routes.conf</value>
-				Router will *append* routes declared in additional files <value>addroutes.conf</value>
-			</list>
+	<bean id="angular2ViewResolver" 
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/views/angular2/</value>
 		</property>
+		<property name="suffix">
+			<value>.html</value>
+		</property>
+	</bean>
 
-		Uncomment the following configuration line if you want routes to be 
-			dynamically reloaded when route files are modified. Can be a good idea in 
-			dev mode, not so much in production!
-		<property name="autoReloadEnabled" value="true" />
-	</bean> -->
+	<!-- <bean id="handlerMapping" class="org.resthub.web.springmvc.router.RouterHandlerMapping"> 
+		<property name="routeFiles"> <list> <value>routes.conf</value> Router will 
+		*append* routes declared in additional files <value>addroutes.conf</value> 
+		</list> </property> Uncomment the following configuration line if you want 
+		routes to be dynamically reloaded when route files are modified. Can be a 
+		good idea in dev mode, not so much in production! <property name="autoReloadEnabled" 
+		value="true" /> </bean> -->
 
 	<import resource="spring-aop.xml" />
 
