@@ -1,0 +1,38 @@
+<project>
+	
+	<property file="build.properties"/>
+	<property name="absolute.prj.dir" value="${local.project.dir}" />
+	<property name="profile" value="local" />
+	
+	<property name="prj.dir" value="..\ws-java4web" />
+	<property name="web.prj.dir" value="${prj.dir}\ws-java4web-web\web-impl" />
+	<property name="pom.prj.dir" value="..\ws-java4web-parent" />
+	<property name="persistence.prj.dir" value="${prj.dir}\ws-java4web-persistence" />
+	
+	<property name="mvn.skip.test" value="-Dmaven.test.skip=true" />
+
+	<!-- Environment -->
+	<property name= "envOS" value="${local.os}" />
+	<property environment="env" />
+
+	<property name="product.name" value="${app.name}" />
+	<property name="product.vendor" value="${app.vendor}" />
+
+	<property name="build.compiler" value="javac1.8" />
+	<property name="ant.build.javac.target" value="1.8" />
+	<property name="ant.build.javac.source" value="1.8" />
+	<property name="compile.debug" value="true" />
+
+	<!-- target folder for intermediate storage -->
+	<property name="target.dir" value="target" />
+
+	<!-- compile destination -->
+	<property name="bin.dir" value="${target.dir}/bin" />
+	<property name="bin.test.dir" value="${target.dir}/bin-test" />
+	<!-- build destination -->
+	<property name="dist.dir" value="${target.dir}/dist" />
+	
+	<property name="web.webapp.dir" value="${web.prj.dir}\src\main\webapp" />
+	<property name="war.dir" value="${web.prj.dir}\${target.dir}" />
+
+</project>

@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>de.pentasys.ws.java4web</groupId>
+		<artifactId>ws-java4web</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>ws-java4web-domain</artifactId>
+
+	<dependencies>
+
+		<!-- app persistence -->
+		<dependency>
+			<groupId>de.pentasys.ws.java4web</groupId>
+			<artifactId>ws-java4web-persistence</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+
+		<!-- logger -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+		</dependency>
+
+		<!-- aop -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+		</dependency>
+		
+		<!-- util -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+
+		<finalName>${context.path}-${project.version}</finalName>
+
+	</build>
+
+	<name>Java4Web:: Domain</name>
+</project>

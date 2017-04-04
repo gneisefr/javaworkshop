@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>de.pentasys.ws.java4web</groupId>
+		<artifactId>ws-java4web-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>ws-java4web</artifactId>
+	<packaging>pom</packaging>
+
+	<profiles>
+
+		<profile>
+			<id>local</id>
+			<properties>
+				<ws.jf.run.mode>local</ws.jf.run.mode>
+				<jdbc.url>jdbc:mysql://localhost:3306/myschema</jdbc.url>
+				<jdbc.username>testuser</jdbc.username>
+				<jdbc.password>testuser</jdbc.password>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<ws.jf.run.mode>dev</ws.jf.run.mode>
+			</properties>
+		</profile>
+
+	</profiles>
+
+	<modules>
+		<module>ws-java4web-persistence</module>
+		<module>ws-java4web-domain</module>
+		<module>ws-java4web-common</module>
+		<module>ws-java4web-business</module>
+		<module>ws-java4web-web</module>
+	</modules>
+
+	<build>
+		<plugins>
+			<!-- Maven compiler plugin -->
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<name>Java4Web</name>
+</project>

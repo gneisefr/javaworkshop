@@ -902,3 +902,14 @@ ws-javaframeworks/ws-javaframeworks-business/business-api/.settings/org.eclipse.
 ws-javaframeworks/ws-javaframeworks-business/business-impl/.settings/org.eclipse.wst.validation.prefs
 ws-javaframeworks/ws-javaframeworks-web/web-impl/.settings/
 *.hsp
+ws-java4web/ws-java4web-common/.settings/
+ws-java4web/ws-java4web-business/business-impl/.settings/
+ws-java4web-parent/.settings/
+ws-java4web/.settings/
+ws-java4web/ws-java4web-business/.settings/
+ws-java4web/ws-java4web-business/business-api/.settings/
+ws-java4web/ws-java4web-domain/.settings/
+ws-java4web/ws-java4web-persistence/.settings/
+ws-java4web/ws-java4web-web/.settings/
+ws-java4web/ws-java4web-web/web-api/.settings/
+ws-java4web/ws-java4web-web/web-impl/.settings/
