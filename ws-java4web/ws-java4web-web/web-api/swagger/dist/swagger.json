@@ -64,7 +64,7 @@
         "users" : {
           "type" : "array",
           "items" : {
-            "$ref" : "#/definitions/User"
+            "type" : "object"
           }
         }
       }
@@ -89,15 +89,15 @@
           "type" : "boolean",
           "default" : false
         },
-        "reference" : {
-          "type" : "boolean",
-          "default" : false
-        },
         "modelMap" : {
           "type" : "object",
           "additionalProperties" : {
             "type" : "object"
           }
+        },
+        "reference" : {
+          "type" : "boolean",
+          "default" : false
         },
         "viewName" : {
           "type" : "string"
@@ -118,9 +118,6 @@
           "type" : "string"
         },
         "firstname" : {
-          "type" : "string"
-        },
-        "password" : {
           "type" : "string"
         },
         "email" : {
