@@ -2,24 +2,35 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>de.pentasys.ws.java4web</groupId>
+		<groupId>com.pentasys.ws.java4web</groupId>
 		<artifactId>ws-java4web-web</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>ws-java4web-web-api</artifactId>
+	<name>Java4Web:: Web-API</name>
+
+	<properties>
+		<swagger.ui.dir>swagger</swagger.ui.dir>
+	</properties>
 
 	<dependencies>
 
 		<!-- app dependencies -->
 		<dependency>
-			<groupId>de.pentasys.ws.java4web</groupId>
+			<groupId>com.pentasys.ws.java4web</groupId>
 			<artifactId>ws-java4web-domain</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>de.pentasys.ws.java4web</groupId>
+			<groupId>com.pentasys.ws.java4web</groupId>
 			<artifactId>ws-java4web-business-api</artifactId>
 			<version>${project.version}</version>
+		</dependency>
+
+		<!-- apis -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
 		</dependency>
 
 		<!-- spring mvc -->
@@ -60,6 +71,12 @@
 			<artifactId>jstl</artifactId>
 		</dependency>
 
+		<!-- doc -->
+		<dependency>
+			<groupId>io.swagger</groupId>
+			<artifactId>swagger-core</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -86,8 +103,59 @@
 			</resource>
 		</resources>
 
+		<plugins>
+			<plugin>
+				<groupId>com.github.kongchen</groupId>
+				<artifactId>swagger-maven-plugin</artifactId>
+				<configuration>
+					<apiSources>
+						<apiSource>
+							<springmvc>true</springmvc>
+							<locations>
+								<location>com.pentasys.ws.java4web.web.api</location>
+							</locations>
+							<schemes>
+								<scheme>http</scheme>
+								<scheme>https</scheme>
+							</schemes>
+							<host>localhost:8080</host>
+							<basePath>/api</basePath>
+							<info>
+								<title>Java4Web Workshop Sample</title>
+								<version>v1</version>
+								<description>
+									This is a sample project for workshop Java4Web
+									(Foundation and Advanced).
+								</description>
+								<termsOfService>
+									http://www.github.com/kongchen/swagger-maven-plugin
+								</termsOfService>
+								<contact>
+									<email>mario.radan@pentasys.de</email>
+									<name>Mario Radan</name>
+								</contact>
+								<license>
+									<url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+									<name>Apache 2.0</name>
+								</license>
+							</info>
+							<outputPath>${basedir}/${swagger.ui.dir}/document.html</outputPath>
+							<swaggerDirectory>${basedir}/${swagger.ui.dir}/dist</swaggerDirectory>
+							<attachSwaggerArtifact>true</attachSwaggerArtifact>
+						</apiSource>
+					</apiSources>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
 	</build>
 
-
-	<name>Java4Web:: Web-API</name>
 </project>

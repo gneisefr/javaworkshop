@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>de.pentasys.ws.java4web</groupId>
+		<groupId>com.pentasys.ws.java4web</groupId>
 		<artifactId>ws-java4web</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
