@@ -13,7 +13,7 @@ public class LoggerAspect {
 
 	private static Logger logger = Logger.getLogger(LoggerAspect.class);
 
-	@Pointcut("execution(* de.pentasys.ws.java4web.business.service.impl.aop.AopService.*(..))")
+	@Pointcut("execution(* com.pentasys.ws.java4web.business.service.impl.AopService.*(..))")
 	public void serviceMethods() {
 
 	}
