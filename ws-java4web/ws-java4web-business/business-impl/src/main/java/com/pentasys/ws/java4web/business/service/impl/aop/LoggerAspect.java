@@ -1,4 +1,4 @@
-package de.pentasys.ws.java4web.business.service.impl.aop;
+package com.pentasys.ws.java4web.business.service.impl.aop;
 
 import org.apache.log4j.Logger;
 import org.aspectj.lang.ProceedingJoinPoint;

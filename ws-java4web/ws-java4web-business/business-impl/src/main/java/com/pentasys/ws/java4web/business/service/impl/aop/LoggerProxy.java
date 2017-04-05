@@ -1,4 +1,4 @@
-package de.pentasys.ws.java4web.business.service.impl.aop;
+package com.pentasys.ws.java4web.business.service.impl.aop;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

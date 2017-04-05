@@ -1,13 +1,13 @@
-package de.pentasys.ws.java4web.persistence.dao.impl;
+package com.pentasys.ws.java4web.persistence.dao.impl;
 
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.pentasys.ws.java4web.persistence.dao.AbstractGenericJpaDAO;
-import de.pentasys.ws.java4web.persistence.dao.UserDAO;
-import de.pentasys.ws.java4web.persistence.model.UserEntity;
+import com.pentasys.ws.java4web.persistence.dao.AbstractGenericJpaDAO;
+import com.pentasys.ws.java4web.persistence.dao.UserDAO;
+import com.pentasys.ws.java4web.persistence.model.UserEntity;
 
 /**
  * Ein DAO für einen Benutzer.
