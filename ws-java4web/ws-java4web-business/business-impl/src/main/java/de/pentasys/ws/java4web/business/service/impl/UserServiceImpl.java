@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.pentasys.ws.java4web.business.mapper.UserEntityBOMapper;
+import de.pentasys.ws.java4web.business.mapper.UserMapper;
 import de.pentasys.ws.java4web.business.service.UserService;
 import de.pentasys.ws.java4web.domain.User;
 import de.pentasys.ws.java4web.persistence.dao.UserDAO;
@@ -19,13 +19,16 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserDAO userDAO;
+	
+	@Autowired
+	private UserMapper mapper;
 
 	@Override
 	public List<User> getUsers() {
 		List<User> users = new ArrayList<User>();
 		List<UserEntity> entities = userDAO.findAll();
 		for (UserEntity ue : entities) {
-			users.add(UserEntityBOMapper.getInstance().createBoFromEntity(ue));
+			users.add(mapper.toUserBO(ue));
 		}
 		return users;
 	}
@@ -33,7 +36,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User getUser(String id) {
 		UserEntity ue = userDAO.findByPrimaryKey(id);
-		return UserEntityBOMapper.getInstance().createBoFromEntity(ue);
+		return mapper.toUserBO(ue);
 	}
 
 	@Override
@@ -46,14 +49,13 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User create(User person) {
-		return UserEntityBOMapper.getInstance()
-				.createBoFromEntity(userDAO.create(UserEntityBOMapper.getInstance().createEntityFromBo(person)));
+		return mapper.toUserBO((userDAO.create(mapper.toUserEntity(person))));
 	}
 
 	@Override
 	public User save(User person) {
-		UserEntity entity = UserEntityBOMapper.getInstance().createEntityFromBo(person);
-		return UserEntityBOMapper.getInstance().createBoFromEntity(userDAO.save(entity));
+		UserEntity entity = mapper.toUserEntity(person);
+		return mapper.toUserBO((userDAO.save(entity)));
 	}
 
 	@Override
