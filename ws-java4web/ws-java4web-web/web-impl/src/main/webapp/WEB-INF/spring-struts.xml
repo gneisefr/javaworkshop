@@ -20,7 +20,7 @@
 	</description>
 
 	<bean id="users"
-		class="de.pentasys.ws.java4web.web.struts.user.action.UserSpringAction">
+		class="com.pentasys.ws.java4web.web.struts.user.action.UserSpringAction">
 		<property name="personService" ref="personService" />
 	</bean>
 

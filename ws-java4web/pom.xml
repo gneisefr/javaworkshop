@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>de.pentasys.ws.java4web</groupId>
+		<groupId>com.pentasys.ws.java4web</groupId>
 		<artifactId>ws-java4web-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
@@ -36,6 +36,7 @@
 	</profiles>
 
 	<modules>
+		<module>ws-java4web-samples/</module>
 		<module>ws-java4web-persistence</module>
 		<module>ws-java4web-domain</module>
 		<module>ws-java4web-common</module>

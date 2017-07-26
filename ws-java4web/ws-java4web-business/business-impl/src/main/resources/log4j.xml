@@ -14,7 +14,7 @@
 
 	</appender>
 
-	<logger name="de.pentasys.ws.java4web" additivity="false">
+	<logger name="com.pentasys.ws.java4web" additivity="false">
 
 		<level value="debug" />
 

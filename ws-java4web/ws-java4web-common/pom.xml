@@ -2,11 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>de.pentasys.ws.java4web</groupId>
+		<groupId>com.pentasys.ws.java4web</groupId>
 		<artifactId>ws-java4web</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>ws-java4web-common</artifactId>
+	<name>Java4Web:: Common</name>
 
 	<dependencies>
 
@@ -30,5 +31,4 @@
 
 	</build>
 
-	<name>Java4Web:: Common</name>
 </project>

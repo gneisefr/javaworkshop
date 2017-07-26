@@ -15,7 +15,7 @@
       http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
 
 	<!-- Scanne das Package nach Spring Beans -->
-	<context:component-scan base-package="de.pentasys.ws.java4web.persistence" />
+	<context:component-scan base-package="com.pentasys.ws.java4web.persistence" />
 
 	<!-- Das Verwenden von Annotationen für die Transaktionen ermöglichen -->
 	<tx:annotation-driven proxy-target-class="true" />
@@ -33,7 +33,7 @@
 			<property name="dataSource" ref="dataSource" />
 			<property name="persistenceUnitName" value="ws-jf-pu" />
 			<property name="packagesToScan"
-				value="de.pentasys.ws.java4web.persistence.model" />
+				value="com.pentasys.ws.java4web.persistence.model" />
 			<property name="jpaVendorAdapter">
 				<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
 					<property name="generateDdl" value="true" />
