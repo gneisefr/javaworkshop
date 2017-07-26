@@ -1,4 +1,4 @@
-package de.pentasys.ws.java4web.business.mapper;
+package com.pentasys.ws.java4web.business.mapper;
 
 import org.mapstruct.DecoratedWith;
 import org.mapstruct.Mapper;

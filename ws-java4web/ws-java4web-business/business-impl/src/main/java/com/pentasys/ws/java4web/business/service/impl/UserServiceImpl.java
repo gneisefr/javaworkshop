@@ -7,12 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.pentasys.ws.java4web.business.mapper.UserMapper;
 import com.pentasys.ws.java4web.business.service.UserService;
 import com.pentasys.ws.java4web.domain.User;
 import com.pentasys.ws.java4web.persistence.dao.UserDAO;
 import com.pentasys.ws.java4web.persistence.model.UserEntity;
-
-import de.pentasys.ws.java4web.business.mapper.UserMapper;
 
 @Service("users")
 @Transactional

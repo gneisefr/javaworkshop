@@ -1,4 +1,4 @@
-package de.pentasys.ws.java4web.business.mapper;
+package com.pentasys.ws.java4web.business.mapper;
 
 import java.util.ArrayList;
 import java.util.List;
