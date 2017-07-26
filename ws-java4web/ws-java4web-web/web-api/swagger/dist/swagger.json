@@ -89,18 +89,18 @@
           "type" : "boolean",
           "default" : false
         },
-        "modelMap" : {
-          "type" : "object",
-          "additionalProperties" : {
-            "type" : "object"
-          }
-        },
         "reference" : {
           "type" : "boolean",
           "default" : false
         },
         "viewName" : {
           "type" : "string"
+        },
+        "modelMap" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "object"
+          }
         }
       }
     },

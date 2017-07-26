@@ -3,8 +3,8 @@ package de.pentasys.ws.java4web.business.mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
-import de.pentasys.ws.java4web.domain.User;
-import de.pentasys.ws.java4web.persistence.model.UserEntity;
+import com.pentasys.ws.java4web.domain.User;
+import com.pentasys.ws.java4web.persistence.model.UserEntity;
 
 /**
  * @author radanmar

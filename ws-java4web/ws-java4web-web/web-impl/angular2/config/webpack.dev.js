@@ -8,11 +8,7 @@ module.exports = webpackMerge(commonConfig, {
 
     output: {
         path: helpers.root('dist'),
-<<<<<<< HEAD
         publicPath: '/${context.path}-${project.version}/views/angular2/',
-=======
-        publicPath: '/ws-java4web-0.0.1-SNAPSHOT/views/angular2/',
->>>>>>> 908f242d3ca7c84f3f50ec4545ec90e94740cf86
         filename: '[name].js',
         chunkFilename: '[id].chunk.js'
     },

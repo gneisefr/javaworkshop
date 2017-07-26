@@ -6,14 +6,14 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
 
-import de.pentasys.ws.java4web.domain.Appointment;
-import de.pentasys.ws.java4web.persistence.model.AppointmentEntity;
+import com.pentasys.ws.java4web.domain.Appointment;
+import com.pentasys.ws.java4web.persistence.model.AppointmentEntity;
 
 /**
  * @author radanmar
  */
 @Mapper(componentModel="spring")
-@DecoratedWith(UserMapperDecorator.class)
+@DecoratedWith(AppointmentMapperDecorator.class)
 public interface AppointmentMapper {
 
 	AppointmentMapper MAPPER = Mappers.getMapper(AppointmentMapper.class);

@@ -6,10 +6,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
-import de.pentasys.ws.java4web.domain.Appointment;
-import de.pentasys.ws.java4web.domain.User;
-import de.pentasys.ws.java4web.persistence.model.AppointmentEntity;
-import de.pentasys.ws.java4web.persistence.model.UserEntity;
+import com.pentasys.ws.java4web.domain.Appointment;
+import com.pentasys.ws.java4web.domain.User;
+import com.pentasys.ws.java4web.persistence.model.AppointmentEntity;
+import com.pentasys.ws.java4web.persistence.model.UserEntity;
 
 /**
  * @author radanmar

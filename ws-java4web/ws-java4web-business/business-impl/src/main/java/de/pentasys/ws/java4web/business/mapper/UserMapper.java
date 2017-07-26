@@ -6,8 +6,8 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
 
-import de.pentasys.ws.java4web.domain.User;
-import de.pentasys.ws.java4web.persistence.model.UserEntity;
+import com.pentasys.ws.java4web.domain.User;
+import com.pentasys.ws.java4web.persistence.model.UserEntity;
 
 /**
  * @author radanmar
@@ -29,6 +29,14 @@ public interface UserMapper {
 	
 	User toUserBO(UserEntity entity);
 	
+	@Mappings({
+		@Mapping(target = "group", ignore = true),
+		@Mapping(source = "bo.name", target = "name"),
+		@Mapping(source = "bo.firstname", target = "firstname"),
+		@Mapping(source = "bo.password", target = "password"),
+		@Mapping(source = "bo.email", target = "email"),
+		@Mapping(source = "bo.active", target = "active")
+	})
 	UserEntity toUserEntity(User bo);
 
 }

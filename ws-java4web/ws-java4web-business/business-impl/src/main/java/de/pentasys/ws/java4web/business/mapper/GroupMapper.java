@@ -6,8 +6,8 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
 
-import de.pentasys.ws.java4web.domain.Group;
-import de.pentasys.ws.java4web.persistence.model.GroupEntity;
+import com.pentasys.ws.java4web.domain.Group;
+import com.pentasys.ws.java4web.persistence.model.GroupEntity;
 
 /**
  * @author radanmar

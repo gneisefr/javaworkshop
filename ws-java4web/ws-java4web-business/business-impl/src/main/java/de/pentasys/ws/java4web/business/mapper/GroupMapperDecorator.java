@@ -6,10 +6,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
-import de.pentasys.ws.java4web.domain.Group;
-import de.pentasys.ws.java4web.domain.User;
-import de.pentasys.ws.java4web.persistence.model.GroupEntity;
-import de.pentasys.ws.java4web.persistence.model.UserEntity;
+import com.pentasys.ws.java4web.domain.Group;
+import com.pentasys.ws.java4web.domain.User;
+import com.pentasys.ws.java4web.persistence.model.GroupEntity;
+import com.pentasys.ws.java4web.persistence.model.UserEntity;
 
 /**
  * @author radanmar
